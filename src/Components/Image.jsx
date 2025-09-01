@@ -1,0 +1,12 @@
+import React from 'react'
+
+function Image({imgSrc,imgAlt,className}) {
+  return (
+    <>
+    <img  className={`${className}`} src={imgSrc} alt ={imgAlt}/>
+    
+    </>
+  )
+}
+
+export default Image
