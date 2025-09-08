@@ -9,9 +9,7 @@ function RootLayout() {
     <Header/>
     <Outlet/>
     <Footer/>
-    
-    
-    </>
+      </>
   )
 }
 

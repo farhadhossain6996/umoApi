@@ -1,19 +1,17 @@
 import React from 'react'
 import Banner from '../Banner'
 import Collection from './Collection'
+import Produts from '../Produts'
+import Pagination from '../Pagination'
 
 
 function Home() {
   return (
    <>
-<div>
-
-<h1>Helllllloooooooooooooooooooooooooooo</h1>
-
 <Banner/>
 <Collection/>
-
-</div>
+<Produts/>
+<Pagination/>
    </>
   )
 }
