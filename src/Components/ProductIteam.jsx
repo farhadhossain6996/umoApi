@@ -6,9 +6,31 @@ import { Link } from 'react-router-dom'
 import { FaHeart,FaCartShopping } from "react-icons/fa6";
 import { LuRefreshCcwDot } from "react-icons/lu";
 import Heading from './Heading'
+import { addtocart } from '../slices/addToCartSlice';
+import { useDispatch } from 'react-redux';
+
+
+
+
 
 
 function ProductIteam({Imgproduct,BadgeText,title,price}) {
+ let dispatch = useDispatch();
+
+
+let handleAddTOCart=()=>{
+  
+ dispatch( addtocart({
+  title:title,
+  img:Imgproduct,
+  price:price,
+  quantity:1
+ }))
+}
+
+
+
+
   return (
     <div className=" relative group px-3 mx-3  ">
       <Image imgSrc={Imgproduct} />
@@ -17,7 +39,7 @@ function ProductIteam({Imgproduct,BadgeText,title,price}) {
     <div className="bg-[#F6E2DD] py-[25px] w-[305px] px-[14px]  opacity-0 group-hover:opacity-75 absolute left-0 bottom-[60px]">
         <Link className='flex  items-center  justify-end gap-x-3 hover:underline font-bold'>Add To Wish lisht <FaHeart /> </Link>
         <Link className='flex  items-center  justify-end gap-x-3 hover:underline font-bold'>Compare <LuRefreshCcwDot /> </Link>
-        <Link className='flex  items-center  justify-end gap-x-3 hover:underline font-bold'>Add to Card <FaCartShopping /> </Link>
+       <div className='flex  items-center  justify-end gap-x-3 hover:underline font-bold' onClick={handleAddTOCart}>  Add to Card <FaCartShopping /> </div>
     </div>
     <div className="mt-2">
 <Heading text={title} as={"h3"}/>
